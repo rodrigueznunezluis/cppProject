@@ -1,6 +1,6 @@
+//Header Files
 #include <iostream>
-
-int main() {
-
-	std::cout << std::endl << "Hello Teacher!";
-}
+#include <fstream>
+#include <string>
+using std::string;
+using namespace std;

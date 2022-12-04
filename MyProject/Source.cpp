@@ -139,18 +139,53 @@ public:
 	Event() {
 		name = "";
 		adress = "";
-		stands  = nullptr;
+		stands = nullptr;
 		noSeats = 0;
 	}
-	Event(string Name, string Adress, Stand* Vstands, int Seats) {
+	Event(string Name, string Adress, Stand* VStands, int Stands, int Seats) {
 		setName(Name);
-		setAdress(adress);
+		setAdress(Adress);
 		setStands(VStands, Stands);
 		setSeats(Seats);
 	}
 
+
 	void setName(string Name) { name = Name; }
-		string getName() { return name; }
+	string getName() { return name; }
 
+	void setAdress(string Adress) { adress = Adress; }
+	string getAdress() { return adress; }
 
+	void setSeats(int Seats) { noSeats = Seats; }
+	int getSeats() { return noSeats; }
+
+	void setStands(Stand* VStands, int Stands) {
+		if (Stands > 0 && VStands != nullptr) {
+			if (stands != nullptr)
+				delete[] stands;
+			stands = new Stand[Stands];
+			for (int i(0); i < Stands; i++) {
+				stands[i].name = VStands[i].name;
+				stands[i].price = VStands[i].price;
+			}
+			noStandTypes = Stands;
+
+		}
+	}
+	~Event() {
+		if (stands != nullptr)
+			delete[] stands;
+	}
+	Stand* operator[](int index) {
+		if (index < noStandTypes)
+			return &(stands[index]);
+		else
+			return nullptr;
+	}
 };
+int main(int argc, char* argv) {
+	
+	return 0;
+		}
+
+			

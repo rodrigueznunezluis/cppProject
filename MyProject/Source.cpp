@@ -52,4 +52,24 @@ public:
 
 	void setSeat(int Seat) { seatNumber = Seat; }
 	int getSeat() { return seatNumber; }
+
+	void SetRow(int Row) { row = Row; }
+	int getRow() { return row; }
+
+	void setStand(string Stand) { stand = Stand; }
+	string getStand() { return stand; }
+
+	void setEventName(const char* Name) {
+		if (std::strlen(Name) > 0) {
+			eventname = new char[std::strlen(Name) + 1 ];
+			strcpy_S(eventname, std::strlen(Name) + 1, Name);
+		}
+	}
+	const char* getEventName() {
+		return this->eventname;
+	}
+	int getTicketid() {
+		return ticketid;
+	}
+
 };

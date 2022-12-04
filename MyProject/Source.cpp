@@ -30,7 +30,7 @@ public:
 	}
 	ticket(ticket& copy) :ticketid(ids) {
 		setPrice(copy.price);
-		setEventName(Copy.eventname);
+		setEventName(copy.eventname);
 		ids++;
 		seatNumber = copy.seatNumber;
 		row = copy.row;
@@ -80,5 +80,6 @@ public:
 	static void setIssuer(string issuer) {
 		issuedBy = issuer;
 	}
-	
+	//Operators
+	ticket*operator=(const ticket&)
 };

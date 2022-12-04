@@ -81,5 +81,47 @@ public:
 		issuedBy = issuer;
 	}
 	//Operators
-	ticket*operator=(const ticket&)
+	ticket* operator=(const ticket& copy) {
+		setEventName(copy.eventname);
+		setPrice(copy.price);
+		return this;
+	}
+};
+
+string ticket::issuedBy("LuisRodriguez");
+int ticket::ids(0);
+
+class entryCard {
+private:
+	ticket* tickets;
+	int noGuests;
+
+public:
+	entryCard() {
+		tickets = nullptr
+			noGuests = 0;
+	}
+	entryCard(const ticket* Vtickets, int guest) {
+		setTickets(Vtickets, guest);
+	}
+	~entryCard() {
+		if (tickets != nullptr)
+			delete[] tickets;
+	}
+
+	void setTickets(const ticket* Vtickets, int guests) {
+		if (guest > 0 && Vtickets != nullptr) {
+			if (tickets != nullptr)
+				delete[]tickets;
+			tickets = new ticket[guests];
+			for (int i(0); i < guests; i++)
+				tickets[i] = Vtickets[i];
+			noGuests = guests;
+		}
+	}
+	
+	ticket& operator[](int index) {
+		if(index < noGuests)
+			return tickets[index];
+	}
 };

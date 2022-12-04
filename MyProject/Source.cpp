@@ -135,6 +135,22 @@ private:
 	int noStandTypes;
 	int noSeats;
 
+public:
+	Event() {
+		name = "";
+		adress = "";
+		stands  = nullptr;
+		noSeats = 0;
+	}
+	Event(string Name, string Adress, Stand* Vstands, int Seats) {
+		setName(Name);
+		setAdress(adress);
+		setStands(VStands, Stands);
+		setSeats(Seats);
+	}
+
+	void setName(string Name) { name = Name; }
+		string getName() { return name; }
 
 
 };

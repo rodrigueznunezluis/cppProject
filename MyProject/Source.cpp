@@ -125,3 +125,16 @@ public:
 			return tickets[index];
 	}
 };
+
+class Event { //private class event
+private:
+	struct Stand { string name; float price; };
+	string name;
+	string adress;
+	Stand* stands;
+	int noStandTypes;
+	int noSeats;
+
+
+
+};

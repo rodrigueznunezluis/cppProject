@@ -98,7 +98,7 @@ private:
 
 public:
 	entryCard() {
-		tickets = nullptr
+		tickets = nullptr;
 			noGuests = 0;
 	}
 	entryCard(const ticket* Vtickets, int guest) {
@@ -110,7 +110,7 @@ public:
 	}
 
 	void setTickets(const ticket* Vtickets, int guests) {
-		if (guest > 0 && Vtickets != nullptr) {
+		if (guests > 0 && Vtickets != nullptr) {
 			if (tickets != nullptr)
 				delete[]tickets;
 			tickets = new ticket[guests];

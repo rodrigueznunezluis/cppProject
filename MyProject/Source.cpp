@@ -21,7 +21,7 @@ public:
 
 	ticket(float price, const char* name, int Seat, int Row, string Stand) :ticketid(ids) {
 		setPrice(price);
-		SetEventName(name);
+		setEventName(name);
 		ids++;
 		seatNumber = Seat;
 		row = Row;

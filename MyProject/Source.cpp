@@ -62,7 +62,7 @@ public:
 	void setEventName(const char* Name) {
 		if (std::strlen(Name) > 0) {
 			eventname = new char[std::strlen(Name) + 1 ];
-			strcpy_S(eventname, std::strlen(Name) + 1, Name);
+			strcpy_s(eventname, std::strlen(Name) + 1, Name);
 		}
 	}
 	const char* getEventName() {

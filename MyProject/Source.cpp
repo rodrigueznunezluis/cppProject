@@ -71,5 +71,14 @@ public:
 	int getTicketid() {
 		return ticketid;
 	}
-
+	static int getCurrentid() {
+		return ids;
+	}
+	static string getIssuer() {
+		return issuedBy;
+	}
+	static void setIssuer(string issuer) {
+		issuedBy = issuer;
+	}
+	
 };
